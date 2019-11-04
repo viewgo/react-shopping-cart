@@ -3,7 +3,6 @@ import ProductContext from "../contexts/ProductContext";
 import data from "../data";
 
 export default function ProductProvider(props) {
-
   const [products] = useState(data);
   const [cart, setCart] = useState([]);
 
@@ -16,8 +15,6 @@ export default function ProductProvider(props) {
   };
 
   return (
-    <ProductContext.Provider value={{ products, cart, addItem, removeItem }}>
-      {props.children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={{ products, cart, addItem, removeItem }}>{props.children}</ProductContext.Provider>
   );
 }
